@@ -1,6 +1,9 @@
 # Clear a 9x5x7 space for the smithing house
 fill ~ ~ ~ ~8 ~4 ~6 air
 
+# Build foundation
+fill ~1 ~-1 ~1 ~7 ~-1 ~5 stone
+
 # Build the cobblestone floor
 fill ~1 ~ ~1 ~7 ~ ~5 cobblestone
 
@@ -11,7 +14,6 @@ fill ~1 ~1 ~2 ~1 ~3 ~4 cobblestone
 fill ~7 ~1 ~2 ~7 ~3 ~4 cobblestone
 
 # Add a door (facing south)
-setblock ~4 ~1 ~1 air
 setblock ~4 ~1 ~1 oak_door[facing=south,half=lower]
 setblock ~4 ~2 ~1 oak_door[facing=south,half=upper]
 
@@ -36,7 +38,10 @@ setblock ~5 ~1 ~2 red_bed[facing=west,part=foot]
 setblock ~6 ~1 ~4 crafting_table
 setblock ~5 ~1 ~4 chest[facing=west]
 
-# Add light sources
+# Add light sources with proper support
+setblock ~4 ~4 ~3 stone_slab
 setblock ~4 ~3 ~3 lantern[hanging=true]
-setblock ~2 ~1 ~3 torch
-setblock ~6 ~1 ~3 torch
+setblock ~2 ~2 ~2 wall_torch[facing=south]
+setblock ~6 ~2 ~2 wall_torch[facing=south]
+setblock ~2 ~2 ~4 wall_torch[facing=north]
+setblock ~6 ~2 ~4 wall_torch[facing=north]

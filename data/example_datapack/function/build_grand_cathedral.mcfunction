@@ -3,8 +3,8 @@
 fill ~-17 ~ ~-22 ~17 ~24 ~22 air
 
 # FOUNDATION
-# Main foundation - create a solid base
-fill ~-16 ~-1 ~-21 ~16 ~-1 ~21 stone_bricks
+# Extended foundation to support all structures including buttresses
+fill ~-18 ~-1 ~-23 ~18 ~-1 ~23 stone_bricks
 fill ~-15 ~-1 ~-20 ~15 ~-1 ~20 polished_andesite
 
 # MAIN FLOOR
@@ -93,15 +93,15 @@ fill ~15 ~1 ~-5 ~16 ~10 ~-4 stone_bricks
 fill ~15 ~1 ~5 ~16 ~10 ~6 stone_bricks
 fill ~15 ~1 ~15 ~16 ~10 ~16 stone_bricks
 
-# Interior columns - grand nave columns
+# Interior columns - grand nave columns (ensure they don't conflict with seating)
 # Left row of columns
-fill ~-11 ~1 ~-8 ~-11 ~8 ~-8 polished_andesite
-fill ~-11 ~1 ~-3 ~-11 ~8 ~-3 polished_andesite
-fill ~-11 ~1 ~2 ~-11 ~8 ~2 polished_andesite
-# Right row of columns
-fill ~11 ~1 ~-8 ~11 ~8 ~-8 polished_andesite
-fill ~11 ~1 ~-3 ~11 ~8 ~-3 polished_andesite
-fill ~11 ~1 ~2 ~11 ~8 ~2 polished_andesite
+fill ~-11 ~ ~-8 ~-11 ~8 ~-8 polished_andesite
+fill ~-11 ~ ~-3 ~-11 ~8 ~-3 polished_andesite
+fill ~-11 ~ ~2 ~-11 ~8 ~2 polished_andesite
+# Right row of columns  
+fill ~11 ~ ~-8 ~11 ~8 ~-8 polished_andesite
+fill ~11 ~ ~-3 ~11 ~8 ~-3 polished_andesite
+fill ~11 ~ ~2 ~11 ~8 ~2 polished_andesite
 
 # Column details - decorative elements on columns
 # Capital and base details for left columns
@@ -273,24 +273,22 @@ setblock ~0 ~30 ~-17 gold_block
 setblock ~0 ~27 ~-17 bell[facing=south]
 
 # GRAND AUDITORIUM SECTION (NAVE)
-# Central auditorium seating - rows of seats made with stairs
-# Left section seating (facing altar)
-fill ~-10 ~1 ~-8 ~-5 ~1 ~-8 oak_stairs[facing=south]
-fill ~-10 ~1 ~-6 ~-5 ~1 ~-6 oak_stairs[facing=south]
-fill ~-10 ~1 ~-4 ~-5 ~1 ~-4 oak_stairs[facing=south]
-fill ~-10 ~1 ~-2 ~-5 ~1 ~-2 oak_stairs[facing=south]
-fill ~-10 ~1 ~0 ~-5 ~1 ~0 oak_stairs[facing=south]
-fill ~-10 ~1 ~2 ~-5 ~1 ~2 oak_stairs[facing=south]
-fill ~-10 ~1 ~4 ~-5 ~1 ~4 oak_stairs[facing=south]
+# Central auditorium seating - properly positioned to avoid column conflicts
+# Left section seating (facing altar) - moved away from columns
+fill ~-10 ~1 ~-7 ~-6 ~1 ~-7 oak_stairs[facing=south]
+fill ~-10 ~1 ~-5 ~-6 ~1 ~-5 oak_stairs[facing=south]
+fill ~-10 ~1 ~-1 ~-6 ~1 ~-1 oak_stairs[facing=south]
+fill ~-10 ~1 ~1 ~-6 ~1 ~1 oak_stairs[facing=south]
+fill ~-10 ~1 ~3 ~-6 ~1 ~3 oak_stairs[facing=south]
+fill ~-10 ~1 ~5 ~-6 ~1 ~5 oak_stairs[facing=south]
 
-# Right section seating
-fill ~5 ~1 ~-8 ~10 ~1 ~-8 oak_stairs[facing=south]
-fill ~5 ~1 ~-6 ~10 ~1 ~-6 oak_stairs[facing=south]
-fill ~5 ~1 ~-4 ~10 ~1 ~-4 oak_stairs[facing=south]
-fill ~5 ~1 ~-2 ~10 ~1 ~-2 oak_stairs[facing=south]
-fill ~5 ~1 ~0 ~10 ~1 ~0 oak_stairs[facing=south]
-fill ~5 ~1 ~2 ~10 ~1 ~2 oak_stairs[facing=south]
-fill ~5 ~1 ~4 ~10 ~1 ~4 oak_stairs[facing=south]
+# Right section seating - moved away from columns
+fill ~6 ~1 ~-7 ~10 ~1 ~-7 oak_stairs[facing=south]
+fill ~6 ~1 ~-5 ~10 ~1 ~-5 oak_stairs[facing=south]
+fill ~6 ~1 ~-1 ~10 ~1 ~-1 oak_stairs[facing=south]
+fill ~6 ~1 ~1 ~10 ~1 ~1 oak_stairs[facing=south]
+fill ~6 ~1 ~3 ~10 ~1 ~3 oak_stairs[facing=south]
+fill ~6 ~1 ~5 ~10 ~1 ~5 oak_stairs[facing=south]
 
 # Center aisle (processional way)
 fill ~-4 ~0 ~-19 ~4 ~0 ~11 red_carpet
@@ -342,28 +340,20 @@ setblock ~14 ~4 ~6 wall_torch[facing=west]
 setblock ~14 ~4 ~10 wall_torch[facing=west]
 setblock ~14 ~4 ~15 wall_torch[facing=west]
 
-# Chandeliers hanging from ceiling
-# Main nave chandeliers
-setblock ~-7 ~12 ~-5 chain
-setblock ~-7 ~11 ~-5 chain
-setblock ~-7 ~10 ~-5 chain
-setblock ~-7 ~9 ~-5 lantern[hanging=true]
-setblock ~-7 ~12 ~5 chain
-setblock ~-7 ~11 ~5 chain
-setblock ~-7 ~10 ~5 chain
-setblock ~-7 ~9 ~5 lantern[hanging=true]
-setblock ~7 ~12 ~-5 chain
-setblock ~7 ~11 ~-5 chain
-setblock ~7 ~10 ~-5 chain
-setblock ~7 ~9 ~-5 lantern[hanging=true]
-setblock ~7 ~12 ~5 chain
-setblock ~7 ~11 ~5 chain
-setblock ~7 ~10 ~5 chain
-setblock ~7 ~9 ~5 lantern[hanging=true]
-setblock ~0 ~12 ~0 chain
-setblock ~0 ~11 ~0 chain
-setblock ~0 ~10 ~0 chain
-setblock ~0 ~9 ~0 lantern[hanging=true]
+# Chandeliers hanging from ceiling - ensure proper ceiling attachment
+# Main nave chandeliers - attached to actual ceiling structure
+setblock ~-7 ~15 ~-5 stone_bricks
+setblock ~-7 ~14 ~-5 chain
+setblock ~-7 ~13 ~-5 chain
+setblock ~-7 ~12 ~-5 lantern[hanging=true]
+setblock ~7 ~15 ~5 stone_bricks
+setblock ~7 ~14 ~5 chain
+setblock ~7 ~13 ~5 chain
+setblock ~7 ~12 ~5 lantern[hanging=true]
+setblock ~0 ~15 ~0 stone_bricks
+setblock ~0 ~14 ~0 chain
+setblock ~0 ~13 ~0 chain
+setblock ~0 ~12 ~0 lantern[hanging=true]
 
 # Altar area special lighting
 setblock ~-5 ~8 ~15 chain
@@ -407,9 +397,11 @@ fill ~-11 ~1 ~9 ~-9 ~1 ~10 blue_carpet
 # Storage area (in the crypt/underneath)
 # Entrance to crypt
 setblock ~-4 ~1 ~-15 oak_trapdoor[facing=north,half=bottom,open=false]
-# Underground storage room
-fill ~-4 ~-1 ~-16 ~-2 ~-3 ~-18 stone_bricks
-fill ~-3 ~-2 ~-17 ~-3 ~-2 ~-17 chest[facing=south]
+# Underground storage room - properly excavated
+fill ~-4 ~-1 ~-18 ~-2 ~-3 ~-16 air
+fill ~-4 ~-3 ~-18 ~-2 ~-3 ~-16 stone_bricks
+fill ~-4 ~-2 ~-18 ~-2 ~-2 ~-16 stone_bricks
+setblock ~-3 ~-2 ~-17 chest[facing=south]
 fill ~-3 ~-2 ~-15 ~-3 ~-1 ~-15 ladder[facing=south]
 # Add more storage and utility
 setblock ~-4 ~-2 ~-17 barrel

@@ -1,8 +1,8 @@
 # Clear a large space for the cathedral (17x12x17)
 fill ~-8 ~ ~-8 ~8 ~11 ~8 air
 
-# Stone brick foundation
-fill ~-7 ~-1 ~-7 ~7 ~-1 ~7 stone_bricks
+# Stone brick foundation - extended for proper support
+fill ~-8 ~-1 ~-8 ~8 ~-1 ~8 stone_bricks
 
 # Main floor with pattern
 fill ~-7 ~ ~-7 ~7 ~ ~7 polished_andesite
@@ -132,14 +132,15 @@ setblock ~2 ~2 ~-2 bookshelf
 setblock ~2 ~2 ~2 bookshelf
 
 # Light sources
-# Corner lanterns
-setblock ~-6 ~3 ~-6 lantern
-setblock ~6 ~3 ~-6 lantern
-setblock ~-6 ~3 ~6 lantern
-setblock ~6 ~3 ~6 lantern
-# Center chandelier
+# Corner lanterns with proper wall mounts
+setblock ~-6 ~3 ~-6 wall_torch[facing=east]
+setblock ~6 ~3 ~-6 wall_torch[facing=west]
+setblock ~-6 ~3 ~6 wall_torch[facing=east]
+setblock ~6 ~3 ~6 wall_torch[facing=west]
+# Center chandelier with proper ceiling support
+setblock ~0 ~6 ~0 stone_bricks
 setblock ~0 ~5 ~0 chain
-setblock ~0 ~4 ~0 lantern
+setblock ~0 ~4 ~0 lantern[hanging=true]
 setblock ~-1 ~4 ~0 lantern
 setblock ~1 ~4 ~0 lantern
 setblock ~0 ~4 ~-1 lantern
@@ -151,7 +152,9 @@ setblock ~7 ~2 ~0 wall_torch[facing=west]
 setblock ~0 ~2 ~-7 wall_torch[facing=south]
 setblock ~0 ~2 ~7 wall_torch[facing=north]
 
-# Living area in a corner
+# Living area in a corner - ensure no wall conflicts
+# Clear area first
+fill ~-6 ~1 ~-5 ~-4 ~1 ~-4 dark_oak_planks
 # Bed
 setblock ~-5 ~1 ~-5 red_bed[facing=south,part=head]
 setblock ~-5 ~1 ~-4 red_bed[facing=south,part=foot]
@@ -173,7 +176,7 @@ setblock ~6 ~1 ~-5 cauldron
 setblock ~5 ~1 ~-4 barrel
 setblock ~6 ~1 ~-4 flower_pot
 
-# Add carpet for decoration
+# Add carpet for decoration - ensure proper placement over floor
 fill ~-4 ~1 ~-1 ~-3 ~1 ~1 blue_carpet
 fill ~3 ~1 ~-1 ~4 ~1 ~1 blue_carpet
 
@@ -188,10 +191,10 @@ setblock ~4 ~1 ~-3 flower_pot
 summon armor_stand ~-4 ~1 ~0
 summon armor_stand ~4 ~1 ~0
 
-# Bonus: add stairs leading to entrance
-fill ~-2 ~ ~-8 ~2 ~ ~-8 stone_brick_stairs[facing=south]
+# Bonus: add stairs leading to entrance - properly graded
 fill ~-2 ~-1 ~-9 ~2 ~-1 ~-9 stone_bricks
 fill ~-2 ~ ~-9 ~2 ~ ~-9 stone_brick_stairs[facing=south]
+fill ~-2 ~ ~-8 ~2 ~ ~-8 stone_brick_stairs[facing=south]
 
 # Message to indicate completion
 tellraw @p {"text":"Enchanting Cathedral has been built!","color":"gold"}

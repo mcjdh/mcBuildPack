@@ -1,11 +1,12 @@
 # Clear a large area for the sakura base (15x10x15)
 fill ~-7 ~ ~-7 ~7 ~9 ~7 air
 
-# Create a stone foundation with path
+# Create a stone foundation with path (ensure proper base)
 fill ~-6 ~-1 ~-6 ~6 ~-1 ~6 stone
 fill ~-5 ~ ~-5 ~5 ~ ~5 cherry_planks
 fill ~-4 ~ ~-4 ~4 ~ ~4 pink_wool
-fill ~-1 ~ ~-6 ~1 ~ ~-2 pink_concrete_powder
+# Entry path properly aligned
+fill ~-1 ~ ~-5 ~1 ~ ~-2 pink_concrete_powder
 
 # Main structure walls
 # Front wall (with entrance)
@@ -163,26 +164,27 @@ setblock ~-2 ~1 ~3 carrots
 setblock ~-1 ~1 ~3 potatoes
 
 # Decorative elements
-# IMPROVED: Lanterns with proper supports
-# Corner lanterns with chains
+# IMPROVED: Lanterns with proper supports - ensure ceiling attachment
+# Corner lanterns with proper ceiling mounts
+setblock ~-4 ~4 ~0 cherry_planks
 setblock ~-4 ~3 ~0 chain
-setblock ~-4 ~2 ~0 lantern
+setblock ~-4 ~2 ~0 lantern[hanging=true]
+setblock ~3 ~4 ~0 cherry_planks
 setblock ~3 ~3 ~0 chain
-setblock ~3 ~2 ~0 lantern
+setblock ~3 ~2 ~0 lantern[hanging=true]
+setblock ~0 ~4 ~-3 cherry_planks
 setblock ~0 ~3 ~-3 chain
-setblock ~0 ~2 ~-3 lantern
+setblock ~0 ~2 ~-3 lantern[hanging=true]
+setblock ~0 ~4 ~3 cherry_planks
 setblock ~0 ~3 ~3 chain
-setblock ~0 ~2 ~3 lantern
-# Center chandelier
-setblock ~0 ~5 ~0 cherry_fence
+setblock ~0 ~2 ~3 lantern[hanging=true]
+# Center chandelier with proper roof attachment
 setblock ~0 ~4 ~0 chain
-setblock ~0 ~3 ~0 lantern
+setblock ~0 ~3 ~0 lantern[hanging=true]
 
-# More lanterns on furniture
-setblock ~2 ~2 ~3 cherry_fence
-setblock ~2 ~1 ~3 lantern
-setblock ~-2 ~2 ~-3 cherry_fence
-setblock ~-2 ~1 ~-3 lantern
+# More lanterns on furniture - ensure proper placement
+setblock ~2 ~2 ~3 lantern
+setblock ~-2 ~2 ~-3 lantern
 
 # Flower pots with azaleas and flowers
 setblock ~-4 ~1 ~-2 flower_pot
@@ -201,14 +203,11 @@ setblock ~5 ~3 ~3 pink_wall_banner[facing=west]
 # IMPROVED: Garden pond in front with proper containment
 # Create a recessed base for the pond
 fill ~3 ~-1 ~-7 ~5 ~-1 ~-6 stone
-# Create stone border around the pond at ground level
-setblock ~2 ~ ~-7 stone
-setblock ~2 ~ ~-6 stone
-setblock ~6 ~ ~-7 stone
-setblock ~6 ~ ~-6 stone
-setblock ~3 ~ ~-8 stone
-setblock ~4 ~ ~-8 stone
-setblock ~5 ~ ~-8 stone
+# Create complete stone border around the pond
+fill ~2 ~ ~-8 ~6 ~ ~-8 stone
+fill ~2 ~ ~-5 ~6 ~ ~-5 stone
+fill ~2 ~ ~-7 ~2 ~ ~-6 stone
+fill ~6 ~ ~-7 ~6 ~ ~-6 stone
 # Now add the water (properly contained)
 fill ~3 ~ ~-7 ~5 ~ ~-6 water
 # Add decorative elements
@@ -221,7 +220,8 @@ setblock ~2 ~1 ~-5 azalea_leaves
 setblock ~6 ~1 ~-5 flowering_azalea_leaves
 
 # Additional outdoor decoration - cherry trees
-# Small cherry tree left
+# Small cherry tree left - ensure proper base
+fill ~-6 ~-1 ~-2 ~-6 ~-1 ~-2 dirt
 setblock ~-6 ~ ~-2 cherry_log
 setblock ~-6 ~1 ~-2 cherry_log
 setblock ~-6 ~2 ~-2 cherry_leaves
@@ -252,7 +252,7 @@ setblock ~2 ~ ~-8 stone_slab
 summon sheep ~2 ~1 ~-8 {Color:6,CustomName:"\"Sakura\""}
 summon sheep ~-2 ~1 ~-8 {Color:6,CustomName:"\"Blossom\""}
 
-# IMPROVED: Add some lanterns along the path
+# IMPROVED: Add some lanterns along the path with proper posts
 setblock ~-1 ~1 ~-8 cherry_fence
 setblock ~-1 ~2 ~-8 lantern
 setblock ~1 ~1 ~-8 cherry_fence
